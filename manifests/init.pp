@@ -1,3 +1,4 @@
+import "devuser.pp"
 import "rubydev.pp"
 
 node default {
@@ -6,8 +7,8 @@ node default {
   import "basedev.pp"
   import "nodejs.pp"
 
-  user { "$user":
-    ensure => present,
+  class { "devuser":
+    user => $user
   }
 
   class { "rubydev":
