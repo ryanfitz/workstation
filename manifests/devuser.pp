@@ -1,8 +1,8 @@
 
 class devuser($user = 'developer') {
 
-  $code_dir = "/home/$user/Code"
-  $git = "/usr/bin/git"
+  $home     = "/home/$user"
+  $code_dir = "/$home/Code"
 
   user { "$user":
     ensure => present,
@@ -21,5 +21,21 @@ class devuser($user = 'developer') {
     creates => "$code_dir/dotfiles",
     path    => "/usr/bin",
     user    => $user;
+  }
+
+  file { "$home/.fonts":
+    ensure => 'link',
+    owner    => $user,
+    group   => $user,
+    target => "$code_dir/dotfiles/fonts",
+    require => Exec[dotfiles]
+  }
+
+  exec { "reload fonts":
+    command => "fc-cache -f -v",
+    path    => "/usr/bin",
+    require => File["$home/.fonts"],
+    subscribe => Exec["dotfiles"],
+    refreshonly => true,
   }
 }
