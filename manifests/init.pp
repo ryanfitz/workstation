@@ -19,4 +19,6 @@ node default {
   class { "vim":
     user => $user
   }
+
+  import "redis.pp"
 }
