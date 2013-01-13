@@ -1,3 +1,16 @@
+import "rubydev.pp"
 
-import "basedev.pp"
-import "nodejs.pp"
+node default {
+  $user = fitz
+
+  import "basedev.pp"
+  import "nodejs.pp"
+
+  user { "$user":
+    ensure => present,
+  }
+
+  class { "rubydev":
+    user => $user
+  }
+}
