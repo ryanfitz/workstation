@@ -27,14 +27,6 @@ package { 'zsh' :
   ensure  => installed,
 }
 
-package { 'vim' :
-  ensure  => installed,
-}
-
-package { 'vim-gnome' :
-  ensure  => installed,
-}
-
 package { 'tmux' :
   ensure  => installed,
 }

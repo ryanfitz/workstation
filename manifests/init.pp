@@ -1,5 +1,6 @@
 import "devuser.pp"
 import "rubydev.pp"
+import "vim.pp"
 
 node default {
   $user = fitz
@@ -12,6 +13,10 @@ node default {
   }
 
   class { "rubydev":
+    user => $user
+  }
+
+  class { "vim":
     user => $user
   }
 }
