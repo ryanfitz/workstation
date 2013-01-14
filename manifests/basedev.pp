@@ -23,10 +23,6 @@ package { 'wget' :
   ensure  => installed,
 }
 
-package { 'zsh' :
-  ensure  => installed,
-}
-
 package { 'tmux' :
   ensure  => installed,
 }
