@@ -35,4 +35,6 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+RVM_PATH=/usr/local/rvm/bin
+export PATH=$HOME/bin:$RVM_PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
