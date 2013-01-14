@@ -18,6 +18,13 @@ class zsh(
     user    => $user;
   }
 
+  file { "$home/.zshrc":
+    source => "puppet:///modules/zsh/zshrc",
+    require => Package['zsh'],
+    owner   => $user,
+    group   => $user
+  }
+
   exec { "change shell":
     command => "chsh -s $zsh $user",
     path    => "/usr/bin:/bin",
