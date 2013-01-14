@@ -1,5 +1,6 @@
-
-class rubydev($user='developer') {
+class rubydev(
+  $user = $workstation::config::user
+) inherits workstation::config {
   include rvm
 
   rvm_system_ruby {
@@ -10,6 +11,6 @@ class rubydev($user='developer') {
 
   rvm::system_user {
     $user:
-      require => User[$user];
+      #require => User[$user];
   }
 }

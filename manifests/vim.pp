@@ -1,11 +1,7 @@
 
-class vim($user='developer') {
-
-  $home = "/home/$user"
-  $vimspf_dir = "$home/.spf13-vim-3"
-  $vim_dir = "$home/.vim"
-  $bundle_dir = "$vim_dir/bundle"
-  $dotfiles_dir = "$home/Code/dotfiles"
+class vim(
+  $user = $workstation::config::user
+) inherits workstation::config {
 
   package { 'vim' :
     ensure  => installed,

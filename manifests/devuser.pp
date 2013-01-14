@@ -1,8 +1,7 @@
 
-class devuser($user = 'developer') {
-
-  $home     = "/home/$user"
-  $code_dir = "/$home/Code"
+class devuser(
+  $user = $workstation::config::user
+) inherits workstation::config {
 
   user { "$user":
     ensure => present,
@@ -16,9 +15,9 @@ class devuser($user = 'developer') {
   }
 
   exec { "dotfiles":
-    command => "git clone git://github.com/ryanfitz/dotfiles.git $code_dir/dotfiles",
+    command => "git clone git://github.com/ryanfitz/dotfiles.git $dotfiles_dir",
     require => [File[$code_dir], Package['git']],
-    creates => "$code_dir/dotfiles",
+    creates => "$dotfiles_dir",
     path    => "/usr/bin",
     user    => $user;
   }
@@ -27,7 +26,7 @@ class devuser($user = 'developer') {
     ensure => 'link',
     owner    => $user,
     group   => $user,
-    target => "$code_dir/dotfiles/fonts",
+    target => "$dotfiles_dir/fonts",
     require => Exec[dotfiles]
   }
 
