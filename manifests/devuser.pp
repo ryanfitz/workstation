@@ -23,18 +23,19 @@ class devuser(
   }
 
   file { "$home/.fonts":
-    ensure => 'link',
+    ensure => directory,
     owner    => $user,
     group   => $user,
-    target => "$dotfiles_dir/fonts",
-    require => Exec[dotfiles]
+    require => User[$user],
+    source => "puppet:///modules/workstation/fonts",
+    recurse => true,
   }
 
   exec { "reload fonts":
     command => "fc-cache -f -v",
     path    => "/usr/bin",
     require => File["$home/.fonts"],
-    subscribe => Exec["dotfiles"],
+    subscribe => File["$home/.fonts"],
     refreshonly => true,
   }
 }
