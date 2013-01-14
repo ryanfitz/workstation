@@ -38,4 +38,12 @@ class devuser(
     subscribe => File["$home/.fonts"],
     refreshonly => true,
   }
+
+  file { "$home/.gitconfig":
+    owner    => $user,
+    group   => $user,
+    require => User[$user],
+    source => "puppet:///modules/workstation/gitconfig",
+  }
+
 }
