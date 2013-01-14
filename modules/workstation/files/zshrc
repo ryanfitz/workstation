@@ -33,8 +33,9 @@ plugins=(git debian node npm rvm ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+export TERM=screen-256color
 export EDITOR=vim
-# Customize to your needs...
 
+# Customize to your needs...
 RVM_PATH=/usr/local/rvm/bin
 export PATH=$HOME/bin:$RVM_PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin

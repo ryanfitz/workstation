@@ -3,6 +3,7 @@ import "devuser.pp"
 import "rubydev.pp"
 import "vim.pp"
 import "zsh.pp"
+import "tmux.pp"
 import "chrome.pp"
 
 node default {
@@ -17,6 +18,7 @@ node default {
   class { "rubydev": }
   class { "vim": }
   class { "zsh": }
+  class { "tmux": }
   class { "chrome": }
 
   import "redis.pp"

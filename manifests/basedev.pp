@@ -23,6 +23,6 @@ package { 'wget' :
   ensure  => installed,
 }
 
-package { 'tmux' :
+package { 'ncurses-term' :
   ensure  => installed,
 }
