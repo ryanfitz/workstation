@@ -13,6 +13,11 @@ package { 'nodejs':
   require => Anchor['nodejs::repo']
 }
 
+package { 'nodejs-dev':
+  ensure  => latest,
+  require => Anchor['nodejs::repo']
+}
+
 package { 'npm':
   name    => 'npm',
   ensure  => latest,
