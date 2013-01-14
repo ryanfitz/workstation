@@ -19,7 +19,7 @@ class zsh(
   }
 
   file { "$home/.zshrc":
-    source => "puppet:///modules/zsh/zshrc",
+    source => "puppet:///modules/workstation/zshrc",
     require => Package['zsh'],
     owner   => $user,
     group   => $user
