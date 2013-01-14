@@ -3,6 +3,7 @@ import "devuser.pp"
 import "rubydev.pp"
 import "vim.pp"
 import "zsh.pp"
+import "chrome.pp"
 
 node default {
   class {"workstation::config":
@@ -16,6 +17,7 @@ node default {
   class { "rubydev": }
   class { "vim": }
   class { "zsh": }
+  class { "chrome": }
 
   import "redis.pp"
 }
