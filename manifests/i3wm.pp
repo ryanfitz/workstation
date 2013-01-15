@@ -10,7 +10,7 @@ class i3wm(
     release           => $lsbdistcodename,
     repos             => "universe",
     key               => "CD693E9E",
-    key_source        => "puppet:///modules/workstation/sur5r-keyring.gpg",
+    key_source        => "https://github.com/ryanfitz/workstation/blob/master/modules/workstation/files/sur5r-keyring.gpg?raw=true",
     include_src       => false,
     before            => Anchor['i3wm::repo'],
   }
