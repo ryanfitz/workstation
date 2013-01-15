@@ -13,9 +13,16 @@ node default {
     user => fitz
   }
 
+  stage { 'bootstrap':
+    before => Stage['main'],
+  }
+
   import "nodejs.pp"
 
-  class { "basedev": }
+  class { "basedev":
+    stage => bootstrap,
+  }
+
   class { "devuser": }
   class { "rubydev": }
   class { "vim": }
