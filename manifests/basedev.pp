@@ -1,28 +1,32 @@
 
-package { 'build-essential':
-  ensure  => installed,
-}
+class basedev() {
 
-package { 'checkinstall' :
-  ensure  => installed,
-}
+  package { 'build-essential':
+    ensure  => installed,
+  }
 
-package { 'libssl-dev' :
-  ensure  => installed,
-}
+  package { 'checkinstall' :
+    ensure  => installed,
+  }
 
-package { 'git' :
-  ensure  => installed,
-}
+  package { 'libssl-dev' :
+    ensure  => installed,
+  }
 
-package { 'curl' :
-  ensure  => installed,
-}
+  package { 'git' :
+    ensure  => installed,
+  }
 
-package { 'wget' :
-  ensure  => installed,
-}
+  package { 'curl' :
+    ensure  => installed,
+  }
 
-package { 'ncurses-term' :
-  ensure  => installed,
+  package { 'wget' :
+    ensure  => installed,
+  }
+
+  package { 'ncurses-term' :
+    ensure  => installed,
+  }
+
 }

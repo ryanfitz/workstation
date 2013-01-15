@@ -1,4 +1,5 @@
 import "config.pp"
+import "basedev.pp"
 import "devuser.pp"
 import "rubydev.pp"
 import "vim.pp"
@@ -12,9 +13,9 @@ node default {
     user => fitz
   }
 
-  import "basedev.pp"
   import "nodejs.pp"
 
+  class { "basedev": }
   class { "devuser": }
   class { "rubydev": }
   class { "vim": }
