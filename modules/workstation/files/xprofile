@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ -f /usr/bin/vmware-user ]; then
+  /usr/bin/vmware-user &
+fi
