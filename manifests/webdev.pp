@@ -17,4 +17,6 @@ class webdev(
   package { 'libjpeg-turbo-progs':
     ensure  => installed,
   }
+
+  class { "phantomjs": }
 }
