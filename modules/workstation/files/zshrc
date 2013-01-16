@@ -33,6 +33,14 @@ plugins=(git debian node npm rvm ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
+if [ -f /etc/profile.d/nodejs.sh ]; then
+  source /etc/profile.d/nodejs.sh
+fi
+
+if [ -f /etc/profile.d/rvm.sh ]; then
+  source /etc/profile.d/rvm.sh
+fi
+
 export TERM=screen-256color
 export EDITOR=vim
 
