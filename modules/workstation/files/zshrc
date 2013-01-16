@@ -37,13 +37,14 @@ if [ -f /etc/profile.d/nodejs.sh ]; then
   source /etc/profile.d/nodejs.sh
 fi
 
-if [ -f /etc/profile.d/rvm.sh ]; then
-  source /etc/profile.d/rvm.sh
-fi
-
 export TERM=screen-256color
 export EDITOR=vim
 
 # Customize to your needs...
-RVM_PATH=/usr/local/rvm/bin
-export PATH=$HOME/bin:$RVM_PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+if [ -f /etc/profile.d/rvm.sh ]; then
+  source /etc/profile.d/rvm.sh
+fi
+
+
