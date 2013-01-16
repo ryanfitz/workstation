@@ -7,6 +7,7 @@ import "zsh.pp"
 import "tmux.pp"
 import "i3wm.pp"
 import "chrome.pp"
+import "webdev.pp"
 
 node default {
   class {"workstation::config":
@@ -30,6 +31,7 @@ node default {
   class { "tmux": }
   class { "i3wm": }
   class { "chrome": }
+  class { "webdev": }
 
   import "redis.pp"
 }
