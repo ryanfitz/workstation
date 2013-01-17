@@ -15,4 +15,6 @@ Workstation: Puppet modules to create an Ubuntu (nodejs) Development Environment
 3. Install scripts
 
   ```
-  sudo puppet apply --modulepath=workstation/modules workstation/manifests/init.pp
+  cd workstation
+  sudo ./workstation.sh
+  ```
