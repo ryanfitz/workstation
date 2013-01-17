@@ -29,4 +29,8 @@ class basedev() {
     ensure  => installed,
   }
 
+  package { 'xfce4-terminal' :
+    ensure  => installed,
+  }
+
 }

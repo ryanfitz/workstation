@@ -26,7 +26,8 @@ new_window 1pixel
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal --hide-menubar
+#bindsym $mod+Return exec gnome-terminal --hide-menubar
+bindsym $mod+Return exec xfce4-terminal --hide-menubar --hide-toolbars --hide-borders
 
 # kill focused window
 bindsym $mod+Shift+Q kill
